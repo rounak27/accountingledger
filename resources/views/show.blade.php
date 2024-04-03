@@ -18,6 +18,12 @@
                 <p><strong>Name:</strong> {{ $customer->cname }}</p>
                 <p><strong>Phone:</strong> {{ $customer->cphone }}</p>
                 <p><strong>Address:</strong> {{ $customer->caddress }}</p>
+                @if($customer->transactions->isNotEmpty())
+                @php
+                 $latestBalance = $customer->transactions->last()->trn_balance;
+                 @endphp
+                <p><strong>Latest Balance:</strong> {{ $latestBalance }}</p>
+    @endif
             </div>
         </div>
     

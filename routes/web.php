@@ -23,3 +23,5 @@ Route::post('/register', [CustomerController::class, 'store'])->name('store');
 Route::get('/addtransaction',[TransactionController::class, 'index'])->name('add-transaction');
 Route::post('/addtransaction',[TransactionController::class, 'store'])->name('store-transaction');
 Route::get('/transactions/{cid}', [TransactionController::class, 'showTransactions'])->name('transaction.show');
+Route::get('/customer', [CustomerController::class, 'show'])->name('customer.show');
+Route::get('/graph/{cid}', [CustomerController::class, 'graph'])->name('customer.graph');
